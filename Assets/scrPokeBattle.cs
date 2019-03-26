@@ -10,7 +10,7 @@ public class scrPokeBattle : MonoBehaviour
 
     public int AtkPower;
     // 0 ~~ 255
-        #region Some attacks and their Atk Power
+    #region Some attacks and their Atk Power
     // 250 / Explosion     / Normal
     // 200 / Self-Destruct / Normal
     // 150 / Hyper Beam    / Normal
@@ -64,7 +64,7 @@ public class scrPokeBattle : MonoBehaviour
     //  20 / Absorb        / Grass
     //  20 / Mud-Slap      / Ground
     //  15 / Poison Sting  / Poison
-        #endregion
+    #endregion
 
     public int PokeAtk;
     // 0 ~~ 999
@@ -94,7 +94,7 @@ public class scrPokeBattle : MonoBehaviour
     // 6 = Fighting // 7 = Poison // 8 = Ground // 9 = Flying // 10 = Psychic // 11 = Bug
     // 12 = Rock // 13 = Ghost // 14 = Dragon // 15 = Dark // 16 = Steel // 17 = Fairy // Other = None
 
-    public bool Burn;
+    public int Burned;
     // true = 0.5;
     // false = 1.0;
 
@@ -106,16 +106,19 @@ public class scrPokeBattle : MonoBehaviour
 
     void Start()
     {
-        LevelCap();
+        LevelCap(PokeLevel);
     }
 
     #region Level Adjust
     int LevelCap(int PokeLevel)
     {
-        int Level;
-        if (PokeLevel < 1) {
+        int Level = PokeLevel;
+        if (PokeLevel < 1)
+        {
             Level = 1;
-        } else if (PokeLevel > 100) {
+        }
+        else if (PokeLevel > 100)
+        {
             Level = 100;
         }
 
@@ -126,10 +129,13 @@ public class scrPokeBattle : MonoBehaviour
     #region Attack Power Adjust
     int AttackPower(int AtkPower)
     {
-        int AtkPow;
-        if (AtkPower < 0) {
+        int AtkPow = AtkPower;
+        if (AtkPower < 0)
+        {
             AtkPow = 0;
-        } else if (AtkPower > 255) {
+        }
+        else if (AtkPower > 255)
+        {
             AtkPow = 255;
         }
 
@@ -140,10 +146,13 @@ public class scrPokeBattle : MonoBehaviour
     #region Pokemon Attack
     int PokemonAttack(int PokeAtk)
     {
-        int PkAtk;
-        if (PokeAtk < 0) {
+        int PkAtk = PokeAtk;
+        if (PokeAtk < 0)
+        {
             PkAtk = 0;
-        } else if (PokeAtk > 999) {
+        }
+        else if (PokeAtk > 999)
+        {
             PkAtk = 999;
         }
 
@@ -154,63 +163,64 @@ public class scrPokeBattle : MonoBehaviour
     #region Pokemon Type
     int PokeType(int Type)
     {
-        switch (Type) {
+        switch (Type)
+        {
             case 0:
-                Type = Normal;
+                Type = 0;
                 break;
             case 1:
-                Type = Fire;
+                Type = 1;
                 break;
             case 2:
-                Type = Water;
+                Type = 2;
                 break;
             case 3:
-                Type = Electric;
+                Type = 3;
                 break;
             case 4:
-                Type = Grass;
+                Type = 4;
                 break;
             case 5:
-                Type = Ice;
+                Type = 5;
                 break;
             case 6:
-                Type = Fighting;
+                Type = 6;
                 break;
             case 7:
-                Type = Poison;
+                Type = 7;
                 break;
             case 8:
-                Type = Ground;
+                Type = 8;
                 break;
             case 9:
-                Type = Flying;
+                Type = 9;
                 break;
             case 10:
-                Type = Psychic;
+                Type = 10;
                 break;
             case 11:
-                Type = Bug;
+                Type = 11;
                 break;
             case 12:
-                Type = Rock;
+                Type = 12;
                 break;
             case 13:
-                Type = Ghost;
+                Type = 13;
                 break;
             case 14:
-                Type = Dragon;
+                Type = 14;
                 break;
             case 15:
-                Type = Dark;
+                Type = 15;
                 break;
             case 16:
-                Type = Steel;
+                Type = 16;
                 break;
             case 17:
-                Type = Fairy;
+                Type = 17;
                 break;
             default:
-                Type = None;
+                Type = 18;
                 break;
         }
 
@@ -224,61 +234,61 @@ public class scrPokeBattle : MonoBehaviour
         switch (AtkType)
         {
             case 0:
-                Type = Normal;
+                AtkType = 0;
                 break;
             case 1:
-                Type = Fire;
+                AtkType = 1;
                 break;
             case 2:
-                Type = Water;
+                AtkType = 2;
                 break;
             case 3:
-                Type = Electric;
+                AtkType = 3;
                 break;
             case 4:
-                Type = Grass;
+                AtkType = 4;
                 break;
             case 5:
-                Type = Ice;
+                AtkType = 5;
                 break;
             case 6:
-                Type = Fighting;
+                AtkType = 6;
                 break;
             case 7:
-                Type = Poison;
+                AtkType = 7;
                 break;
             case 8:
-                Type = Ground;
+                AtkType = 8;
                 break;
             case 9:
-                Type = Flying;
+                AtkType = 9;
                 break;
             case 10:
-                Type = Psychic;
+                AtkType = 10;
                 break;
             case 11:
-                Type = Bug;
+                AtkType = 11;
                 break;
             case 12:
-                Type = Rock;
+                AtkType = 12;
                 break;
             case 13:
-                Type = Ghost;
+                AtkType = 13;
                 break;
             case 14:
-                Type = Dragon;
+                AtkType = 14;
                 break;
             case 15:
-                Type = Dark;
+                AtkType = 15;
                 break;
             case 16:
-                Type = Steel;
+                AtkType = 16;
                 break;
             case 17:
-                Type = Fairy;
+                AtkType = 17;
                 break;
             default:
-                Type = None;
+                AtkType = 18;
                 break;
         }
 
@@ -287,13 +297,18 @@ public class scrPokeBattle : MonoBehaviour
     #endregion
 
     #region Targets
-    int Target(int Targets)
+    double Target(int Targets)
     {
         double TargetDmg = 1.00;
-        if (Targets == 1) {
-        } else if (Targets >= 2) {
+        if (Targets == 1)
+        {
+        }
+        else if (Targets >= 2)
+        {
             TargetDmg *= 0.75;
-        } else if (Targets <= 0) {
+        }
+        else if (Targets <= 0)
+        {
             TargetDmg *= 0.00;
         }
 
@@ -307,61 +322,61 @@ public class scrPokeBattle : MonoBehaviour
         switch (TgtType1)
         {
             case 0:
-                TgtType1 = Normal;
+                TgtType1 = 0;
                 break;
             case 1:
-                TgtType1 = Fire;
+                TgtType1 = 1;
                 break;
             case 2:
-                TgtType1 = Water;
+                TgtType1 = 2;
                 break;
             case 3:
-                TgtType1 = Electric;
+                TgtType1 = 3;
                 break;
             case 4:
-                TgtType1 = Grass;
+                TgtType1 = 4;
                 break;
             case 5:
-                TgtType1 = Ice;
+                TgtType1 = 5;
                 break;
             case 6:
-                TgtType1 = Fighting;
+                TgtType1 = 6;
                 break;
             case 7:
-                TgtType1 = Poison;
+                TgtType1 = 7;
                 break;
             case 8:
-                TgtType1 = Ground;
+                TgtType1 = 8;
                 break;
             case 9:
-                TgtType1 = Flying;
+                TgtType1 = 9;
                 break;
             case 10:
-                TgtType1 = Psychic;
+                TgtType1 = 10;
                 break;
             case 11:
-                TgtType1 = Bug;
+                TgtType1 = 11;
                 break;
             case 12:
-                TgtType1 = Rock;
+                TgtType1 = 12;
                 break;
             case 13:
-                TgtType1 = Ghost;
+                TgtType1 = 13;
                 break;
             case 14:
-                TgtType1 = Dragon;
+                TgtType1 = 14;
                 break;
             case 15:
-                TgtType1 = Dark;
+                TgtType1 = 15;
                 break;
             case 16:
-                TgtType1 = Steel;
+                TgtType1 = 16;
                 break;
             case 17:
-                TgtType1 = Fairy;
+                TgtType1 = 17;
                 break;
             default:
-                TgtType1 = None;
+                TgtType1 = 18;
                 break;
         }
 
@@ -375,61 +390,61 @@ public class scrPokeBattle : MonoBehaviour
         switch (TgtType2)
         {
             case 0:
-                TgtType2 = Normal;
+                TgtType2 = 0;
                 break;
             case 1:
-                TgtType2 = Fire;
+                TgtType2 = 1;
                 break;
             case 2:
-                TgtType2 = Water;
+                TgtType2 = 2;
                 break;
             case 3:
-                TgtType2 = Electric;
+                TgtType2 = 3;
                 break;
             case 4:
-                TgtType2 = Grass;
+                TgtType2 = 4;
                 break;
             case 5:
-                TgtType2 = Ice;
+                TgtType2 = 5;
                 break;
             case 6:
-                TgtType2 = Fighting;
+                TgtType2 = 6;
                 break;
             case 7:
-                TgtType2 = Poison;
+                TgtType2 = 7;
                 break;
             case 8:
-                TgtType2 = Ground;
+                TgtType2 = 8;
                 break;
             case 9:
-                TgtType2 = Flying;
+                TgtType2 = 9;
                 break;
             case 10:
-                TgtType2 = Psychic;
+                TgtType2 = 10;
                 break;
             case 11:
-                TgtType2 = Bug;
+                TgtType2 = 11;
                 break;
             case 12:
-                TgtType2 = Rock;
+                TgtType2 = 12;
                 break;
             case 13:
-                TgtType2 = Ghost;
+                TgtType2 = 13;
                 break;
             case 14:
-                TgtType2 = Dragon;
+                TgtType2 = 14;
                 break;
             case 15:
-                TgtType2 = Dark;
+                TgtType2 = 15;
                 break;
             case 16:
-                TgtType2 = Steel;
+                TgtType2 = 16;
                 break;
             case 17:
-                TgtType2 = Fairy;
+                TgtType2 = 17;
                 break;
             default:
-                TgtType2 = None;
+                TgtType2 = 18;
                 break;
         }
 
@@ -438,19 +453,28 @@ public class scrPokeBattle : MonoBehaviour
     #endregion
 
     #region Weather
-    int Wther(int Weather)
+    double Wther(int Weather)
     {
         double WeatherDmg = 1.00;
-        if (Weather == 1) {
-            if (AtkType == 2) {
+        if (Weather == 1)
+        {
+            if (AtkType == 2)
+            {
                 WeatherDmg = 2.00;
-            } else if (AtkType == 1) {
+            }
+            else if (AtkType == 1)
+            {
                 WeatherDmg = 0.50;
             }
-        } else if (Weather == 2) {
-            if (AtkType == 1) {
+        }
+        else if (Weather == 2)
+        {
+            if (AtkType == 1)
+            {
                 WeatherDmg = 2.00;
-            } else if (AtkType == 2) {
+            }
+            else if (AtkType == 2)
+            {
                 WeatherDmg = 0.50;
             }
         }
@@ -460,15 +484,14 @@ public class scrPokeBattle : MonoBehaviour
     #endregion
 
     #region Critical Hit
-    bool isCrit()
+    double Critical()
     {
         double lucky = Random.Range(0, 15);
-        if (lucky = 15) {
-            bool isCrit = true;
-            double Crit = 1;
-            if (isCrit) {
-                Crit = 1.5;
-            }
+        double Crit = 1;
+
+        if (lucky == 15)
+        {
+            Crit = 1.5;
         }
 
         return Crit;
@@ -487,7 +510,8 @@ public class scrPokeBattle : MonoBehaviour
     #region SameTypeAttackBonus(STAB)
     double Stab(double STAB)
     {
-        if (PokeType == AtkType) {
+        if (Type == AtkType)
+        {
             STAB = 1.5;
         }
 
@@ -496,11 +520,11 @@ public class scrPokeBattle : MonoBehaviour
     #endregion
 
     #region Burn
-    bool isBurn()
+    double isBurn()
     {
-        bool isBurn = true;
-        double Burn = 1;
-        if (isBurn) {
+        double Burn = Burned;
+        if (Burned >= 1)
+        {
             Burn = 0.5;
         }
 
@@ -509,40 +533,54 @@ public class scrPokeBattle : MonoBehaviour
     #endregion
 
     #region Multiplier
-    double Multiplier(int AtkType,int TgtType1,int TgtType2)
+    double Multiplier(int AtkType, int TgtType1, int TgtType2)
     {
         double Multi;
 
-            // Normal
-        if (AtkType = 0 && TgtType1 = 13 || TgtType2 = 13) {
+        // Normal
+        if (AtkType = 0 && TgtType1 = 13 | |TgtType2 = 13)
+        {
             Multi = 0;
-        } else if (AtkType = 0 && TgtType1 = 12 || TgtType1 = 16) {
+        }
+        else if (AtkType = 0 && TgtType1 = 12 || TgtType1 = 16)
+        {
             Multi = 0.5;
-            if (AtkType = 0 && TgtType2 = 12 || TgtType2 = 16) {
+            if (AtkType = 0 && TgtType2 = 12 || TgtType2 = 16)
+            {
                 Multi = 0.25;
             }
-        } 
-            // Fire 
-        else if (AtkType = 1 && TgtType1 = 1 || TgtType1 = 2 || TgtType1 = 12 || TgtType1 = 14) {
+        }
+        // Fire 
+        else if (AtkType = 1 && TgtType1 = 1 || TgtType1 = 2 || TgtType1 = 12 || TgtType1 = 14)
+        {
             Multi = 0.5;
-            if (AtkType = 1 && TgtType2 = 1 || TgtType2 = 2 || TgtType2 = 12 || TgtType2 = 14) {
+            if (AtkType = 1 && TgtType2 = 1 || TgtType2 = 2 || TgtType2 = 12 || TgtType2 = 14)
+            {
                 Multi = 0.25;
             }
-        } else if (AtkType = 1 && TgtType1 = 4 || TgtType1 = 5 || TgtType1 = 11 || TgtType1 = 16) {
+        }
+        else if (AtkType = 1 && TgtType1 = 4 || TgtType1 = 5 || TgtType1 = 11 || TgtType1 = 16)
+        {
             Multi = 2;
-            if (AtkType = 1 && TgtType2 = 4 || TgtType2 = 5 || TgtType2 = 11 || TgtType2 = 16) {
+            if (AtkType = 1 && TgtType2 = 4 || TgtType2 = 5 || TgtType2 = 11 || TgtType2 = 16)
+            {
                 Multi = 4;
             }
         }
-            // Water
-        else if (AtkType = 2 && TgtType1 = 2 || TgtType1 = 4 || TgtType1 = 14) {
+        // Water
+        else if (AtkType = 2 && TgtType1 = 2 || TgtType1 = 4 || TgtType1 = 14)
+        {
             Multi = 0.5;
-            if (AtkType = 2 && TgtType1 = 2 || TgtType1 = 4 || TgtType1 = 14) {
+            if (AtkType = 2 && TgtType1 = 2 || TgtType1 = 4 || TgtType1 = 14)
+            {
                 Multi = 0.25;
             }
-        } else if (AtkType = 2 && TgtType1 = 1 || TgtType1 = 8 || TgtType1 = 12) {
+        }
+        else if (AtkType = 2 && TgtType1 = 1 || TgtType1 = 8 || TgtType1 = 12)
+        {
             Multi = 2;
-            if (AtkType = 2 && TgtType1 = 1 || TgtType1 = 8 || TgtType1 = 12) {
+            if (AtkType = 2 && TgtType1 = 1 || TgtType1 = 8 || TgtType1 = 12)
+            {
                 Multi = 4;
             }
         }
@@ -550,10 +588,10 @@ public class scrPokeBattle : MonoBehaviour
     #endregion
 
     #region Modifier
-    double Mdf(double TargetDmg, double WeatherDmg, double Crit, double Rand, double STAB,double Multi, double Burn)
+    double Mdf(double TargetDmg, double WeatherDmg, double Crit, double Rand, double STAB, double Multi, double Burn)
     {
         var Modifier = TargetDmg * Weather * Crit * Rand * STAB * Multi * Burn;
-        Dmg(Modifier);
+        return Modifier;
     }
     #endregion
 
